@@ -9,6 +9,9 @@ import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,9 +23,9 @@ public class DataDrivenTest {
 	
 	WebDriver driver;
 	WebDriverWait wait;
-	HSSFWorkbook workbook;
-	HSSFSheet sheet;
-	HSSFCell cell;
+	XSSFWorkbook workbook;
+	XSSFSheet sheet;
+	XSSFCell cell;
 	
 	@BeforeTest
 	public void TestSetup() {
@@ -46,7 +49,7 @@ public class DataDrivenTest {
 		FileInputStream finput = new FileInputStream(src);
 		
 		//load the workbook
-		workbook = new HSSFWorkbook(finput);
+		workbook = new XSSFWorkbook(finput);
 		
 		//load the sheet in which data is stored
 		sheet = workbook.getSheetAt(0);
