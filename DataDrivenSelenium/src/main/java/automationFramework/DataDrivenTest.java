@@ -5,16 +5,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -29,8 +26,8 @@ public class DataDrivenTest {
 	
 	@BeforeTest
 	public void TestSetup() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\austi\\OneDrive\\Documents\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		System.setProperty("webdriver.gecko.driver", "C:\\Users\\austi\\OneDrive\\Documents\\geckodriver.exe");
+		WebDriver driver = new FirefoxDriver();
 		
 		driver.get("https://www.linkedin.com/login");
 		driver.manage().window().maximize();
